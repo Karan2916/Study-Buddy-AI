@@ -3,7 +3,8 @@ An intelligent RAG-based chatbot to help BMSCE students get instant, cited answe
 
 **Live Demo:** https://study-buddy-frontend-ycrk.onrender.com
 
-**(Suggestion: Replace this placeholder with a real screenshot of your application)**
+**![Uploading image.png…]()
+**
 
 ## The Problem
 BMSCE students manage dozens of PDFs, notes, and slides. When it's time to study, finding a specific piece of information is like searching for a needle in a haystack. Answers are buried across countless files, making revision inefficient and stressful.
