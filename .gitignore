@@ -1,0 +1,36 @@
+# General system files
+.DS_Store
+*.swo
+*.swp
+
+# --- Python / Backend ---
+
+# Ignore the virtual environment folder
+backend/venv/
+
+# Ignore the file with secret API keys
+backend/.env
+
+# Ignore the local vector database
+backend/faiss_index/
+
+# Ignore Python cache files
+backend/__pycache__/
+
+
+# --- Node / Frontend ---
+
+# Ignore the massive folder of downloaded packages
+frontend/node_modules/
+
+# Ignore the production build output
+frontend/dist/
+
+# Ignore local environment variables for the frontend
+frontend/.env
+frontend/.env.*
+
+# Ignore log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Study Buddy AI Design System - Academic & Modern */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    /* Academic Color Palette */
+    --primary: 217 91% 60%;        /* Bright blue for AI theme */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 91% 70%;  /* Lighter blue for hover states */
+    --primary-dark: 217 91% 50%;   /* Darker blue for active states */
+    
+    /* Study-focused secondary colors */
+    --secondary: 142 76% 36%;      /* Green for success states */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 271 91% 65%;         /* Purple for highlights */
+    --accent-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;         /* Orange for processing */
+    
+    /* Chat colors */
+    --user-message: 217 91% 60%;   /* User messages in primary blue */
+    --bot-message: 220 13% 18%;    /* Bot messages in dark gray */
+    --chat-bg: 220 13% 96%;        /* Light gray chat background */
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(271 91% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(142 76% 36%), hsl(217 91% 60%));
+    --gradient-bg: linear-gradient(135deg, hsl(0 0% 100%), hsl(217 91% 98%));
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.5rem;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-elegant: 0 10px 30px -10px hsl(217 91% 60% / 0.3);
+    --shadow-glow: 0 0 40px hsl(217 91% 70% / 0.4);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 70%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 142 76% 46%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 271 91% 75%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217 91% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+      body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-bg);
+    min-height: 100vh;
+  }
+}
+
+/* Custom animations for Study Buddy */
+@keyframes pulse-dot {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: hsl(var(--muted-foreground));
+  animation: pulse-dot 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+.typing-dot:nth-child(3) { animation-delay: 0s; }
+
+/* Smooth scroll for chat */
+.chat-messages {
+  scroll-behavior: smooth;
+}
+
+/* File upload progress styling */
+.upload-progress {
+  transition: var(--transition-smooth);
+}
